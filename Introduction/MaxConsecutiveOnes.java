@@ -1,8 +1,11 @@
 class MaxConsecutiveOnes {
     public int findMaxConsecutiveOnes(int[] nums) {
-        /* Initialize variable to count the maximum number of 1s
-        * from the array and another variable to count the current
-        * number of 1s in a row from the array
+        /*Given a binary array nums, 
+        * return the maximum number of consecutive 1's in the array.
+        * --- Solution ---
+        *Initialize variable to count the maximum number of 1s
+        * and another variable to count the current
+        * number of 1s in a row
         */ 
         int max_count = 0;
         int current_count = 0;
@@ -20,7 +23,7 @@ class MaxConsecutiveOnes {
                 current_count = 0;
             }
         }
-        // Verifying that the final sequence in the array to make sure that the
+        // Verifying the final sequence in the array to make sure that
         // the max_count is correct
         max_count = Math.max(max_count, current_count);
         //return final max_count 
