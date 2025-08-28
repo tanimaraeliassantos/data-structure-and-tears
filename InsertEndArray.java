@@ -6,6 +6,14 @@ public class InsertEndArray {
         for (int i = 0; i < 3; i++) {
             intArray[length] = i;
             length++;
+            System.out.println("Index" + i + " contains " + intArray[i]);
+        }
+    }
+
+    public static void main(String[] args) {
+        InsertEndArray myArray = new InsertEndArray();
+        for (int i = 0; i < myArray.length; i++) {
+            System.out.println(myArray.intArray[i]);
         }
     }
 
