@@ -11,7 +11,7 @@ public class InsertStartArray {
         }
     }
 
-    public void InsertStartArray(int value) {
+    public void insertAtStart(int value) {
         if (length < intArray.length) {
             for (int i = length; i > 0; i--) {
                 intArray[i] = intArray[i - 1];
@@ -36,7 +36,7 @@ public class InsertStartArray {
             System.out.println(myArray.intArray[i]);
         }
 
-        myArray.InsertStartArray(4);
+        myArray.insertAtStart(4);
         System.out.println("Array after inserting 4 at the beginning: ");
         for (int i = 0; i < myArray.length; i++) {
             System.out.println(myArray.intArray[i]);
