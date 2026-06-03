@@ -12,23 +12,43 @@ import java.util.Arrays;
  * To accomodate this, nums1 has a length of m + n, where the first
  * m elements denote the elements that should be merged, and the last
  * n elements are set to 0 and should be ignored. nums2 has a length of n.
+ * Constraints:
+    * nums1.length == m + n
+    * nums2.length == n
+    * 0 <= m, n <= 200
+    * 1 <= m + n <= 200
+    * -109 <= nums1[i], nums2[j] <= 109
+    
+    * Follow up: Can you come up with an algorithm that runs in O(m + n) time?*
  */
 public class MergeSortedArray {
     /*
-     * Declare method, define input parameters: an integer nums1, the number of valid
+     * Declare method, define input parameters: an integer nums1, the number of
+     * valid
      * elements in nums1, the integer array nums2 (to be merged into nums1),
      * the number of elements in nums2
      */
-   
+
     public void merge(int[] nums1, int m, int[] nums2, int n) {
-        //Start for loop with counter in 0 and let it continue for as long as the counter
-        // is less than number of elements in nums2
-        for (int i = 0; i < n; i++) {
-            //Access element at index i in nums2 array, calculate the correct position
-            // in nums1 where the element from nums2 should go
-            nums1[m + i] = nums2[i];
+        int p1 = m - 1;
+        int p2 = n - 1;
+        int p = m + n - 1;
+
+        while (p1 >= 0 && p2 >= 0) {
+            if (nums1[p1] > nums2[p2]) {
+                nums1[p] = nums1[p1];
+                p1--;
+            } else {
+                nums1[p] = nums2[p2];
+                p2--;
+            }
+            p--;
         }
-        //sort the array in non-decreasing order
-        Arrays.sort(nums1);
+        while (p2 >= 0) {
+            nums1[p] = nums2[p2];
+            p2--;
+            p--;
+        }
+
     }
 }
